@@ -1,0 +1,32 @@
+<p><a class="btn btn-primary" routerLink='/admin/products/new'>New Product</a></p>
+<br/>
+<input #query (keyup)="filter(query.value)" type="text" class="form-control">
+<br>
+<br>
+<!-- <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover display nowrap "> -->
+<table id="example" class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <!-- <tbody>
+    <tr *ngFor="let prod of products$ | async">
+      <td>{{prod.title}}</td>
+      <td>{{prod.price}}</td>
+      <td><a [routerLink]="['/admin/products/',prod.key]">Edit</a></td>
+    </tr>
+  </tbody> -->
+  <tbody>
+    <tr *ngFor="let prod of filteredProducts">
+      <td>{{prod.Title}}</td>
+      <td>{{prod.Price}}</td>
+      <td><a [routerLink]="['/admin/products/',prod.Id]">Edit</a></td>
+    </tr>
+  </tbody>
+
+</table>
+
+
